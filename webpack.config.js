@@ -6,13 +6,17 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    // filename: '[name].[contenthash].js'
-    filename: 'index.[contenthash].js'
+    filename: '[name].[contenthash].js'
+    // filename: 'index.[contenthash].js'
+  },
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
   },
   plugins: [new HtmlWebpackPlugin({
-      title: "master of time",
-      template: 'src/assets/index.html' 
-    })
+    title: "master of time",
+    template: 'src/assets/index.html'
+  })
   ],
   module: {
     rules: [
